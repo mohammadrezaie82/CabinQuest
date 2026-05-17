@@ -42,6 +42,7 @@ export const getCabins = async function () {
     throw new Error("Cabins could not be loaded");
   }
 
+  console.log(data, error);
   return data;
 };
 
@@ -75,7 +76,7 @@ export async function getBookings(guestId) {
     .from("bookings")
 
     .select(
-      "id, created_at, startDate, endDate, numNights, numGuests, totalPrice, guestId, cabinId, cabins(name, image)"
+      "id, created_at, startDate, endDate, numNights, numGuests, totalPrice, guestId, cabinId, cabins(name, image)",
     )
     .eq("guestId", guestId)
     .order("startDate");
@@ -132,7 +133,7 @@ export async function getSettings() {
 export async function getCountries() {
   try {
     const res = await fetch(
-      "https://restcountries.com/v2/all?fields=name,flag"
+      "https://restcountries.com/v2/all?fields=name,flag",
     );
     const countries = await res.json();
     return countries;
