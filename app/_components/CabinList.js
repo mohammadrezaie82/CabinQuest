@@ -4,10 +4,9 @@ import CabinCard from "@/app/_components/CabinCard";
 import { getCabins } from "../_lib/data-service";
 
 async function CabinList({ filter }) {
-  // noStore();
+  noStore();
 
   const cabins = await getCabins();
-  console.log(cabins);
 
   if (!cabins.length) return null;
 
@@ -17,7 +16,7 @@ async function CabinList({ filter }) {
     displayedCabins = cabins.filter((cabin) => cabin.maxCapacity <= 3);
   if (filter === "medium")
     displayedCabins = cabins.filter(
-      (cabin) => cabin.maxCapacity >= 4 && cabin.maxCapacity <= 7
+      (cabin) => cabin.maxCapacity >= 4 && cabin.maxCapacity <= 7,
     );
   if (filter === "large")
     displayedCabins = cabins.filter((cabin) => cabin.maxCapacity >= 8);
