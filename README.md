@@ -1,6 +1,6 @@
 # the-oasis-wild
 
-![Project Image](https://github.com/mohammadrezaie82/repository/blob/main/images/project-image.png)
+![Project Preview](./public/preview.png)
 
 ## About The Project
 
